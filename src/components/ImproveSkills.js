@@ -2,6 +2,8 @@ export default function ImproveSkills(){
     const list = [
         "Learn new recepies",
         "Experiment with food",
+        "Learn Nutritional facts",
+        "Write your own recipes",
         "Get cooking tips",
         "Get ranked"
     ]
