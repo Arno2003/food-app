@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -33,9 +35,9 @@ export default function Navbar(){
             <div className="navbar container">
                 <a href="#!" className="logo">F<span>oo</span>dieHub</a>
                 <div className="nav-links">
-                    <a href="#!" className="active">Home</a>
-                    <a href="#!">Recipes</a>
-                    <a href="#!">Settings</a>
+                    <Link to="/" className="active">Home</Link>
+                    <Link to="/recipes">Recipes</Link>
+                    <Link to="/settings">Settings</Link>
                 </div>
                 <div onClick={() => setShowSidebar(!showSidebar)} className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}>
                     <div className="bar"></div>
