@@ -43,12 +43,6 @@ export default function ChefsSection(){
         <div className="section chefs">
             <h1 className="title">Our Top Chefs</h1>
             <div className="top-chefs-container">
-                {/* <ChefsCard />
-                <ChefsCard />
-                <ChefsCard />
-                <ChefsCard />
-                <ChefsCard />
-                <ChefsCard /> */}
                 {chefs.map(chef => <ChefsCard key={chef.name} chef={chef} />)}
             </div>
         </div>
