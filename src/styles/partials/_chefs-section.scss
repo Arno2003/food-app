@@ -1,3 +1,4 @@
+
 .section.chefs {
     display: block;
 }
@@ -6,6 +7,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 1.5em;
+    margin-top: 3em;
 }
 
 .chef-card {
@@ -29,7 +31,7 @@
         justify-content: space-between;
         padding-bottom: 0.5em;
         padding-left: 1em;
-        
+
         .chef-card-name {
             font-size: 1.2em;
             font-weight: bold;

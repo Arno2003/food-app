@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"
 
-import { useState } from "react";
-import Sidebar from "./Sidebar";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
-import { faList } from "@fortawesome/free-solid-svg-icons";
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import { useState } from "react"
+import Sidebar from "./Sidebar"
+
+import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons"
 
 export default function Navbar(){
-    const [showSidebar, setShowSidebar] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false)
+    const location = useLocation()
     const links = [
         {
             name: "Home",
@@ -26,26 +25,26 @@ export default function Navbar(){
             icon: faCog
         }
     ]
-    function closeSidebar(){
-        setShowSidebar(false);
-    }
 
-    return(
+    function closeSidebar(){
+        setShowSidebar(false)
+    }
+    return (
         <>
             <div className="navbar container">
-                <a href="#!" className="logo">F<span>oo</span>dieHub</a>
+                <Link to="/" className="logo">F<span>oo</span>diesHub</Link>
                 <div className="nav-links">
-                    <Link to="/" className="active">Home</Link>
-                    <Link to="/recipes">Recipes</Link>
-                    <Link to="/settings">Settings</Link>
+                    { links.map(link => (
+                        <Link className={location.pathname === link.path ? "active" : ""} to={link.path} key={link.name}>{link.name}</Link>
+                    )) }
                 </div>
-                <div onClick={() => setShowSidebar(!showSidebar)} className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}>
+                <div onClick={() => setShowSidebar(true)} className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
                 </div>
             </div>
-            {showSidebar && <Sidebar close={closeSidebar} links="links" />}
+            { showSidebar && <Sidebar close={closeSidebar} links={links} /> }
         </>
     )
 }

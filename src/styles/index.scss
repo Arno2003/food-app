@@ -95,72 +95,51 @@ img {
 }
 
 @import "partials/hero-section.scss";
-@import "partials/improve-skills";
-@import "partials/quote-section";
-@import "partials/footer";
+@import "partials/improve-skills.scss";
+@import "partials/quote-section.scss";
+@import "partials/footer.scss";
+@import "partials/chefs-section.scss";
 
-.section.chefs {
+.previous-searches{
     display: block;
-}
-
-.top-chefs-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 1.5em;
-    margin-top: 3em;
-}
-
-.chef-card {
-    display: flex;
-    height: 120px;
-    background-color: var(--background-color);
-    border-radius: 5px;
-    overflow: hidden;
-
-    img {
-        height: 100%;
-        width: 120px;
-        border-radius: 5px;
-        box-shadow: 0 3px 6px var(--shadow-color);
+    h2{
+        color: var(--text-color);
+        margin-bottom: 1em;
     }
-
-    .chef-card-info {
-        height: 100%;
+    .previous-searches-container{
+        padding: 15px;
+        .search-item{
+            background-color: var(--primary-color);
+            display: inline-block;
+            padding: 0.5em 1em;
+            margin: 0 1em 1em 0;
+            color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 3px 6px var(--shadow-color);
+            transform: translateX(100%);
+            opacity: 0;
+            animation: 0.5s slideInRight forwards;
+        }
+    }
+    .search-box{
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-bottom: 0.5em;
-        padding-left: 1em;
-
-        .chef-card-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--text-color);
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        input, .btn{
+            height: 35px;
         }
-
-        .chef-recipe-count, .chef-cuisine {
-            font-size: 1.2em;
-            color: var(--text-light);
+        input{
+            min-width: 250px;
+            padding: 0 0.5em;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            border: 1px solid #4d4d4d;
         }
-
-        .chef-icons {
-            font-size: 1.2em;
-
-            svg {
-                margin-left: 0.5em;
-
-                &:nth-child(1) {
-                    color: #0063f7;
-                }
-
-                &:nth-child(2) {
-                    color: #13b4ff;
-                }
-
-                &:nth-child(3) {
-                    color: #ff0056;
-                }
-            }
+        .btn{
+            padding-block: 0;
+            padding-inline: 0.5em;
+            border-radius: 0 5px 5px 0;
         }
     }
 }
