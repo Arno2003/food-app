@@ -16,7 +16,7 @@ export default function HeroSection(){
         <div className="section hero">
             <div className="col typography">
                 <h1 className="title">What Are We About</h1>
-                <p className="info">Foodiehub is a place where you can please your soul and tummy with delicious food recipies of all cuisines. And our service is completely free. So, what are you waiting for?</p>
+                <p className="info">FoodiesHub is a place where you can please your soul and tummy with delicious food recipies of all cuisines. And our service is completely free. So, what are you waiting for?</p>
                 <button className="btn">explore now!</button>
             </div>
             <div className="col gallery">
